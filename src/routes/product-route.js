@@ -2,13 +2,10 @@
 
 const express = require('express');
 const router = express.Router();
+const controller = require('../controllers/product-controller');
 
-router.post('/', (req, res, next) => {
-    res.status(201).send(req.body);
-});
+router.post('/', controller.post);
 
-router.put('/:id', (req, res, next) => {
-    res.status(201).send({"id" : req.params.id, "body": req.body});
-});
+router.put('/:id',controller.put);
 
 module.exports = router;
